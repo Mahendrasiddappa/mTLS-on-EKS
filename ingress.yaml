@@ -7,14 +7,14 @@ metadata:
   name: mtls-ingress
 spec:
   rules:
-  - host: mahendrasiddappa.com
+  - host: "*.mahendrasiddappa.com"
     http:
       paths:
       - backend:
           serviceName: mtls-service
-          servicePort: 80
-        path: /mtls
+          servicePort: 5678
+        path: /
   tls:
   - hosts:
-    - mahendrasiddappa.com
+    - "*.mahendrasiddappa.com"
     secretName: mtls-certs
